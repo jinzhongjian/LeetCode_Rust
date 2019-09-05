@@ -5,15 +5,17 @@
 
 示例:
 
-`给定 nums = [2, 7, 11, 15], target = 9`
+```
+给定 nums = [2, 7, 11, 15], target = 9
 
-`因为 nums[0] + nums[1] = 2 + 7 = 9`
-`所以返回 [0, 1]`
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+```
 
 #### 方法一：暴力法
 
 便利每个元素，找到元素相加等于target，返回索引数组
-
+```
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     for i in 0..nums.len() {
         for j in i+1..nums.len() {
@@ -24,11 +26,11 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     }
     return vec![];
 }
-
+```
 #### 方法二：哈希表
 
 把数组中元素放到插入到表中的同时  hashmap<值, 索引>，反过来查看是否存在当前元素对应的目标元素 ，存在立即返回
-
+```
 pub fn two_sum_2(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut map = HashMap::new();
     for (index, num) in nums.iter().enumerate() {
@@ -41,7 +43,7 @@ pub fn two_sum_2(nums: Vec<i32>, target: i32) -> Vec<i32> {
     }
     return vec![];
 }
-
+```
 #### 问题
 
  返回数组是存在问题
